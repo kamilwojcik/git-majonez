@@ -4,7 +4,7 @@ using namespace std;
 
 int main(int argc, char * argv[])
 {
-	cout<<"Hello World"<<endl;
+	cout<<"Hello Coders School"<<endl;
 
 	return 0;
 }

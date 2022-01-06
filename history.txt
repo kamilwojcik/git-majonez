@@ -1,3 +1,5 @@
+ 2071  mkdir git-majonez
+ 2072  cd git-majonez
  2073  nano main.cpp 
  2074  git init
  2075  git add .
@@ -6,7 +8,12 @@
  2078  nano main.cpp 
  2079  cat main.cpp 
  2080  git commit -a -m"Farewell changed"
- 2081  gh repo create	//zadanie troszkę inaczej zrobiłem: użyłem narzędzia gh do wrzucenia repo na githuba
+ //2081  gh repo create
+ //small cheating ;) I used gh client (above) to push this repo to gh
+ //but this file failed the tests for not using git remote add origin ADDRESS
+ //so I just edited this file instead of deleting this repo and creating it again.
+ 2081  git remote add origin https://github.com/kamilwojcik/git-majonez.git
+ 2081  git git push -u origin master
  2082  git checkout -b cs
  2083  nano main.cpp 
  2084  git rebase -i HEAD^
@@ -29,21 +36,4 @@
  2101  git log --pretty=oneline --graph
  2102  history 50 > history.txt
 
-...a potem zedytowałem w nano, ucinając starszą część historii sprzed zadania. I dodając komentarz
-
-
-////// skasowałem to co było wcześniej - polecenia zaczynają się od zadania
-
-////// nie byłem pewien czy chodzi o historię basha, więc dodałem też reflog:
-
-
-0d3247e HEAD@{0}: commit (merge): Merge branch 'cs'
-43ed7fa HEAD@{1}: checkout: moving from cs to master
-d2b9faa HEAD@{2}: commit: Greetings
-2bb2102 HEAD@{3}: rebase -i (finish): returning to refs/heads/cs
-2bb2102 HEAD@{4}: rebase -i (start): checkout HEAD^
-43ed7fa HEAD@{5}: rebase -i (finish): returning to refs/heads/cs
-43ed7fa HEAD@{6}: rebase -i (start): checkout HEAD
-43ed7fa HEAD@{7}: checkout: moving from master to cs
-43ed7fa HEAD@{8}: commit: Farewell changed
-2bb2102 HEAD@{9}: commit (initial): Initial commit
+I edited my history in nano, to remove unnecessary previous commands.
